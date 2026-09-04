@@ -4,43 +4,43 @@ const caixaAlternativas = document.querySelector(".caixa-alternativas");
 const caixaResultado = document.querySelector(".caixa-resultado");
 const textoResultado = document.querySelector(".texto-resultado");
 
-const perguntas =[
+const perguntas = [
     {
-        enunciado: "O ensino de programação e robótica tem ganhado espaço nas escolas. Você acredita que aprender a programar é essencial para a formação dos jovens, mesmo para quem não quer seguir carreira em tecnologia?",
+        enunciado: "A preservação do meio ambiente é uma responsabilidade apenas dos governos e grandes empresas?",
         alternativas: [
             {
-                texto: "Sim, pois desenvolve o raciocínio lógico, a resolução de problemas e a capacidade de estruturar pensamentos de forma organizada.",
-                afirmacao: "A programação vai muito além dos códigos: ela ensina uma forma estruturada de pensar que ajuda na solução de desafios em qualquer área do conhecimento."
+                texto: "Não, pois as atitudes individuais e coletivas também contribuem para a construção de uma sociedade mais sustentável.",
+                afirmacao: "A preservação ambiental depende da participação de toda a sociedade, desde pequenas escolhas do dia a dia até ações coletivas em defesa do planeta."
             },
             {
-                texto: "Não, pois é um conhecimento muito específico que só traz benefícios reais para quem pretende trabalhar na área de tecnologia.",
-                afirmacao: "Embora pareça uma habilidade estritamente técnica, a lógica de programação desenvolve competências universais e cada vez mais cobradas no mercado."
+                texto: "Sim, pois somente governos e grandes empresas possuem recursos suficientes para causar mudanças significativas.",
+                afirmacao: "Embora governos e empresas tenham grande responsabilidade, a participação da população também é importante para pressionar por mudanças e adotar hábitos mais sustentáveis."
             }
         ]
     },
     {
-        enunciado: "Muitos iniciantes acham a área de robótica intimidadora por envolver código e eletrônica. Qual é a abordagem mais recomendada para quem quer dar os primeiros passos?",
+        enunciado: "O consumo excessivo pode causar impactos no meio ambiente. Qual atitude contribui para uma sociedade mais sustentável?",
         alternativas: [
             {
-                texto: "Começar com linguagens visuais baseadas em blocos e kits educativos simples de robótica.",
-                afirmacao: "Iniciar com ferramentas visuais permite aprender a lógica fundamental sem a frustração de cometer erros de sintaxe e digitação no código."
+                texto: "Consumir de forma consciente, evitando desperdícios e priorizando produtos duráveis, reutilizáveis e necessários.",
+                afirmacao: "O consumo consciente ajuda a reduzir a exploração de recursos naturais, a produção de resíduos e os impactos causados pelo descarte excessivo."
             },
             {
-                texto: "Aprender diretamente linguagens complexas como C++ e montar circuitos do zero sem kits prontos.",
-                afirmacao: "Tentar dominar conceitos avançados de eletrônica e código ao mesmo tempo pode tornar o aprendizado muito árduo e desmotivar o iniciante."
+                texto: "Comprar o máximo possível de produtos novos para acompanhar as tendências e estimular o crescimento econômico.",
+                afirmacao: "O consumo sem planejamento pode aumentar a geração de resíduos e a utilização de recursos naturais, tornando necessário repensar nossos hábitos de compra."
             }
         ]
     },
     {
-        enunciado: "Kits de robótica e componentes eletrônicos podem ter custos elevados. O uso de simuladores virtuais e softwares gratuitos é uma alternativa viável para quem quer aprender sem gastar muito?",
+        enunciado: "Como a sociedade pode contribuir para diminuir os problemas relacionados ao lixo e à poluição?",
         alternativas: [
             {
-                texto: "Sim, pois os simuladores virtuais permitem testar circuitos e códigos em tempo real sem risco de danificar peças físicas.",
-                afirmacao: "Os ambientes virtuais democratizam o acesso à robótica, permitindo que qualquer pessoa pratique e erre com segurança antes de investir em componentes."
+                texto: "Reduzindo o desperdício, separando materiais para reciclagem e buscando formas corretas de descarte.",
+                afirmacao: "A redução e o descarte adequado dos resíduos são atitudes importantes para diminuir a poluição e promover uma relação mais responsável entre sociedade e natureza."
             },
             {
-                texto: "Não faz muita diferença, pois a experiência prática de manusear peças físicas é insubstituível para o aprendizado.",
-                afirmacao: "Apesar do contato físico ser enriquecedor, a simulação digital já oferece precisão suficiente para construir uma base sólida e acessível em robótica."
+                texto: "Descartando os resíduos em qualquer local, pois a limpeza e o tratamento do lixo são responsabilidades exclusivas do poder público.",
+                afirmacao: "O descarte inadequado prejudica o ambiente e a qualidade de vida, mostrando que a colaboração entre cidadãos e poder público é essencial para enfrentar esse problema."
             }
         ]
     }
@@ -55,14 +55,15 @@ function mostraPergunta() {
         mostraResultado();
         return;
     }
+
     perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
     caixaAlternativas.textContent = "";
     mostraAlternativas();
 }
 
-function mostraAlternativas(){
-    for(const alternativa of perguntaAtual.alternativas) {
+function mostraAlternativas() {
+    for (const alternativa of perguntaAtual.alternativas) {
         const botaoAlternativas = document.createElement("button");
         botaoAlternativas.textContent = alternativa.texto;
         botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
@@ -78,7 +79,7 @@ function respostaSelecionada(opcaoSelecionada) {
 }
 
 function mostraResultado() {
-    caixaPerguntas.textContent = "Sobre a leitura...";
+    caixaPerguntas.textContent = "Sobre ambientalismo e sociedade...";
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent = "";
 }
